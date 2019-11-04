@@ -1,0 +1,1 @@
+function sum(l,o){return l+o}console.log("这是FILE1"),sum(5,13),console.log("这是file2"),alert("file2");

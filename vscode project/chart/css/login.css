@@ -1,0 +1,293 @@
+@import "comment.css";
+
+.container{
+    width: 300px;
+    height: 300px;
+    line-height: 2;
+    box-sizing: border-box;
+    /* 加边框不改变盒子属性 */
+    position: relative;
+
+}
+
+.container .login .switch-menu{
+    border-bottom: 1px solid #cccccc;
+    font-size: 13px;
+    padding: 10px;
+    padding-top: 20px;
+    color: #9b9b9b;
+}
+.model{
+    margin-top: -12px;
+}
+
+.container .login .switch-menu span{
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: -11px;
+    
+}
+
+.container .login .switch-menu span.selected{
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid#494949;
+    
+}
+.container .form-item {
+    margin:10px 0;
+    position: relative;
+}
+.container .form-item a{
+    color: #41ac52;
+}
+
+.container .form-item p{
+    color: #9b9b9b ;
+    font-size: 12px;
+}
+
+input{
+    border: none;
+    outline: none;
+    outline-offset: 0;
+}
+
+input[type="text"],input[type="password"]{
+    width: 100%;
+    border: 1px solid #e4e6e5;
+    box-sizing: border-box;
+    height: 34px;
+    padding-left: 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    
+}
+
+input[type="text"].more-text-indent{
+    padding-left: 65px;
+
+}
+
+.container .form-item .country-code{
+    position:absolute;
+    width: 50px;
+    height: 30px;
+    left: 10px;
+    top: 31px;
+    color: #333;
+    font-size: 16px;
+    line-height: 26px;
+    border-right: 1px solid#ccc;
+    cursor: pointer;
+}
+
+.container .yanzhengma a{
+    color: #41ac52;
+    cursor: pointer;
+    position: absolute; 
+    top: 118px;
+    left: 220px;
+    font-size: 15px;
+}
+
+.container .form-item .codes{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .5);
+    left: 0;
+    top: 0; 
+    z-index: 1; 
+}
+
+
+.container .form-item .codes .center{
+    position: absolute;
+    width: 285px;
+    height: 225px;
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: #fff;
+    border-radius: 4px;
+    cursor: auto;
+    overflow: hidden;
+
+}
+
+.duanxin-login{
+    margin-top: -16px;
+}
+
+.container .form-item .codes .center .title{
+    background: #ebf5eb;
+    text-align: left;
+    height: 42px;
+    line-height: 42px;
+    padding-left: 10px;
+    color: #060;
+    font-weight: bold;
+}
+
+.container .form-item .codes .center .title-ul {
+    font-size: 15px;
+    padding: 20px;
+    height: 180px;
+    overflow:auto;
+    box-sizing: border-box;
+    padding-top:1px;
+
+}
+
+.container .form-item .codes .center .title-ul li{
+    height: 38px;
+    line-height: 38px;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    margin-top: -1px;
+}
+
+.container .form-item .codes .center .title-ul li .float-right{
+    color: #aaa;
+    font-weight: normal;
+}
+.country-code .codes .title-ul .select{
+    color: green;
+}
+
+
+.jhjdd{
+    border-top: 2px solid #e4e6e5;
+    box-sizing: border-box;
+    margin-top: 10px;
+}       
+
+.msg{
+    color: #9b9b9b;
+    padding-top: 8px;
+}
+
+
+
+
+.weibo a{
+    width: 25px;
+    height: 25px;
+    display: block;
+    background: url(../images/微博.jpg)no-repeat left top/25px 25px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-top: -9px;
+
+    
+}
+
+.weibo a span{
+    display: none;
+}
+
+ .weixin a{
+    width: 30px;
+    height: 30px;
+    display: block;
+    background: url(../images/微信.png)no-repeat left top/30px 30px;
+    overflow: hidden;
+    padding-bottom: 30px;
+    padding-right: 116px;
+    margin-top: -9px;
+}
+
+.weixin a span{
+    display: none;
+} 
+
+.container .qrcode{
+    font-size: 13px;
+}
+
+.container .qrcode .title{
+    color: #333;
+    border-bottom: 1px solid #ececec;
+    margin-top: 20px;
+    font-weight: 600;
+    cursor: pointer; 
+
+}
+
+.container .qrcode .code img{
+    width: 170px;
+    height: 170px;
+}
+
+.container .qrcode .code{
+    text-align: center;
+    font-size: 0;
+    margin: 20px 0;
+
+}
+
+.container .qrcode .tip{
+    text-align: center;
+    width: 183px;
+    height: 25px;
+    line-height: 25px;
+    background : rgba(0,0,0,.08);
+    color: #494949;
+    margin: 0 auto;
+    border-radius: 3px;
+}
+
+.container .change{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    top: 10px;
+}
+
+.container .change i{
+    width: 30px;
+    height: 30px;
+    display: block;
+    cursor: pointer;
+
+
+}
+
+.container .change .icon-qrcode{
+
+    background: url(../images/下载1.png)no-repeat left top/100% 100%;
+}
+
+.container .change .icon .icon-pc{
+    background: url(../images/下载.png)no-repeat left top/100% 100%;
+}
+
+.container .pointer{
+    position: absolute;
+    width: 70px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid rgba(66,189,86,.3);
+    color: #666;
+    font-size: 13px;
+    background: #f5faf9;
+    right: 50px;
+    top:10px;
+    padding: 0 5px;
+    border-radius: 4px;
+}
+.container .change .pointer{
+    display: none;
+}
+.container .change:hover .pointer{
+    display: block;
+   
+}

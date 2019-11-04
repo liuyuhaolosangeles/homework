@@ -1,0 +1,38 @@
+<!-- <p [ngClass] = "classes">directory works!</p> -->
+
+<!-- *ngFor -->
+
+<h2>personal Contact</h2>
+<form >
+    <label >Filter Name</label>
+    <input type="text" [(ngModel)]="term" name="first" style="margin-left: 20px;">
+</form>
+<ul>
+    <li *ngFor="let person of people | filter:term">
+        <div style="display: inline-block;    border-top: 2px solid #e4e6e5;">
+            <span style="float: left; margin-top: 22px;" [ngStyle]='{background:person.color}'>{{person.color}}</span>
+            <h3 style="float: left; margin-left: 20px;">{{person.name }}</h3> <!--大写uppercase 小写lowercase-->
+            <h3 style="float: right;margin-left: 20px;">{{person.phone}}</h3>
+        </div>
+    </li>
+   
+</ul>
+<button (click)="logit()">log me </button>
+<!-- *ngif -->
+<!-- <p *ngIf="bool">如果条件为真你可以看到这段文字，否则看不到</p> -->
+
+<!-- ngClass -->
+<!-- <style>
+    .blue{ color:blue;}
+    .red{ color:red};
+    .underline{text-decoration-style: dashed;}
+</style> -->
+
+<style>
+li{
+     list-style: none;
+  
+}
+
+
+</style>

@@ -1,0 +1,25 @@
+{
+  "name": "gulpexapp",
+  "version": "1.0.0",
+  "description": "学习如何使用gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "刘煜昊",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-series": "^1.0.2",
+    "gulp-uglify": "^3.0.2",
+    "uglify": "^0.1.5"
+  },
+  "dependencies": {
+    "4": "0.0.0",
+    "graceful-fs": "^4.2.2",
+    "minimatch": "^3.0.4"
+  }
+}

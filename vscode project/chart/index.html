@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/Chart.js/2.8.0/Chart.min.js"></script>
+    <title>Chart1</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <canvas id="mychart"></canvas>
+    </div>
+
+    <script>
+        let mychart = document.getElementById('mychart').getContext('2d');
+        //全局变量
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 15;
+        Chart.defaults.global.defaultFontColor = '#050';
+        //实例化Chart类型对象并保存到mychart中
+        let chart = new Chart(mychart,{
+            type:'bar',
+            data:{
+                labels:["北京","上海","深圳","广州","重庆","武汉","成都","杭州"],
+                datasets:[{
+                    label:["工作热度值"],
+                  
+                    data:[4563135,1231325,1213151,2313211,5142135,4164235,4512313,1132121],
+                    backgroundColor:[
+                                      
+                                        'rgba(255, 99, 111, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 255, 64, 0.2)',
+                                        'rgba(255, 159, 255, 0.2)',
+                                        'rgba(255, 159, 192, 0.2)'
+                                    ],
+                            //添加边框
+
+                    borderWidth:1,
+                    borderColor:'#777',
+                    hoverBorderWidth:3,
+                    hoverBorderColor:'#000'
+ 
+                }],
+
+            },
+            options:{
+                title:{
+                    display : true,
+                    text:"中国各大城市工作热度值",
+                    fontSize :30,
+                    color:'#000'
+                    },
+                legend:{
+                    display:true,
+                    position:'right',
+                    labels:{
+                    fontColor:'red',
+                        }
+                    },  
+                    layout:{
+
+                        padding:{
+                        left:250,right:0,bottom:0,top:0
+                        }
+                    },
+                    tooltips:{
+                        enabled: false
+                    }
+            },
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+
+.header{
+	color: #999;
+	background: #e3e4e5;
+	height: 40px;
+	line-height: 40px;
+}
+
+.header .topnav>li{
+	float: left;
+	margin: 0 20px;
+	background: lightblue;
+	width: 150px;
+	text-align: center;
+	height: 40px;
+	box-sizing: border-box;
+}
+a{
+	text-decoration: none;
+	color: skyblue;
+}
+
+.clearfix::after{/* 解决浮动问题产生的高度坍塌*/
+    content: "";
+    display: block;
+    clear: both;
+}
+
+li{
+	list-style-type: none;
+}
+
+
+.header .topnav>li .submenu{
+	text-align: left;
+	line-height: 1.5;
+	width: 300px;
+	display: none;
+}
+
+.header .topnav>li:hover{
+	background: lightblue;
+	border: 2px solid #ccc;
+	border-bottom: none;
+
+}
+
+
+.header .topnav>li:hover .submenu{
+	display: block;
+}
+
+
+i{
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	left: 120px;
+
+}
+
+.task a{
+	position: relative;
+}

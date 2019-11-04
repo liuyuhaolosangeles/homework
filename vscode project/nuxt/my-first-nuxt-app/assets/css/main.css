@@ -1,0 +1,5 @@
+/* 需要在nuxt.config.js中设置 */
+
+h1{
+    color: green;
+}

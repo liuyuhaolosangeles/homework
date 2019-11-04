@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React-Template</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/react.min.js"></script>
+    <script src="../js/react-dom.min.js"></script>
+    <script src="../js/browser.min.js"></script>
+</head>
+<body>
+	<!-- 容器 -->
+	<div id="container"></div>
+	<script type="text/babel">
+	
+	
+// 创建组件 
+		var Board = React.createClass({
+			// 定义函数
+			getInitialState:function(){
+					return({comments:[]});
+				},
+
+
+				updata:function(newText,i){
+				var arr = this.state.comments;
+				arr[i] = newText;
+				this.setState({comments:arr})
+				},
+
+				removeComment:function(i){
+					 var arr = this.state.comments;
+					 arr.splice(i,1);
+					 //更新状态
+					 this.setState({commtents:arr})
+				},
+
+
+				add:function(text){
+					var arr=this.state.comments;
+					arr.push(text);
+
+					this.setState({commtents:arr})
+				},
+
+
+				each:function(text,i){
+										// 遍历
+										return (<Bacon deleteFromBoard={this.removeComment} updataText={this.updata} key={i} index={i}> {text} </Bacon>)
+									},
+				
+				render:function(){
+					return(
+						// board 蓝底  commentContainer 单个样式 .bind绑定默认的内容字符串text
+						<div>                                         
+							<button onClick={this.add.bind(null,"Default text")} className="button-info create">Add New</button>
+						                                
+					<div className="board">
+						{
+				
+							this.state.comments.map(this.each)
+								
+					
+						}
+					</div>
+					</div>
+				);
+			}
+		});
+
+
+
+		var Bacon = React.createClass({
+				getInitialState:function(){
+					return({editing:false});
+				}
+					
+				,
+			// 必须都拥有自己的render
+			// 首字母必须大写
+			edit:function () {
+				// setState 修改状态值
+				this.setState({editing:true})
+			},  
+			remove:function(){
+				this.props.deleteFromBoard(this.props.index)
+			},
+            renderNormal:function(){
+				return(
+				
+					<div className="commentContainer">
+						<div>{this.props.children}</div>
+						<button onClick={this.edit} className="button-primary">Edit</button>
+						<button onClick={this.remove} className="button-danger">Delete</button>
+						</div>
+				);
+			},
+
+			//把按键和函数关联起来
+			save:function(){
+				var val = this.refs.newText.value;
+				this.props.updataText(val,this.props.index)
+
+				this.setState({editing:false}) 
+			},
+			
+
+			renderForm:function(){
+				return(
+					<div className="commentContainer">
+						<textarea ref="newText" defaultValue={this.props.children}></textarea>
+						<button  onClick={this.save} className="button-success">save</button>
+						</div>
+				)
+			},
+
+
+
+			render:function () {
+			
+				if(this.state.editing){
+					return this.renderForm();
+				}
+				else {
+					return this.renderNormal();
+				}
+
+
+
+				
+				
+				
+			
+			}
+		});
+
+
+		// 状态改变
+		// var Checkbox = React.createClass({
+		// 	//初始化状态值 系统提供 不能改名
+		// 	getInitialState:function(){
+		// 		return{
+		// 			checked:false
+		// 		}
+		// 	},
+		// 	handleChecked:function(){
+				// this.setState({checked:!this.state.checked})
+		// 	},
+
+		// 	render:function(){
+		// 		var msg;
+		// 		if(this.state.checked){
+		// 			msg = "checked"
+
+		// 	}else{
+		// 		msg = "unchecked"
+		// 	}
+
+
+		// 		return (
+		// 			<div>
+		// 					<input type="checkbox" onChange={this.handleChecked}
+		// 					defaultChecked={this.state.checked} />
+		// 					<h3>checkbox is {msg}</h3>
+		// 				</div>
+		// 		)
+		// 	}
+		// });
+
+	
+	ReactDOM.render(
+
+	<Board />
+	,
+		
+		document.getElementById('container')
+	);
+</script>
+</body>
+</html>
